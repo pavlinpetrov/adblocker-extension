@@ -2,8 +2,8 @@ const filters = [
 	"*://*.doubleclick.net/*",
 ];
 
-chrome.webRequest.onBeforeRequest.addListener(
-    details => ({ cancel: true }),
-    { urls: filters },
-    ["blocking"]
-);
+const blockRequest = () => {
+	return { cancel: true };
+};
+
+chrome.webRequest.onBeforeRequest.addListener( blockRequest, { urls: filters }, ["blocking"] );
