@@ -1,5 +1,5 @@
 # AdBlocker Extension
-An simple chrome extension that blocks google paid results and ads on [https://dir.bg](dir.bg).
+A simple chrome extension that blocks google paid results and ads on [https://dir.bg](dir.bg).
 
 ### Installation
 - Open the Extension Management page.
