@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "matches": ["*://*.google.com/*"],
-            "css": ["paid-results.css"],
+            "css": ["css/paid-results.css"],
             "js": ["js/utils.js", "js/paid-results.js"]
         }
     ],
