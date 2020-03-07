@@ -3,14 +3,17 @@
     "version": "1.0",
     "description": "Hides google paid search results and dir.bg ads.",
     "permissions": ["webRequest", "webRequestBlocking", "storage", "activeTab", "*://*.dir.bg/*", "*://*.doubleclick.net/*"],
+	"browser_action": {
+        "default_popup": "blocked-ads-counter.html"
+    },
     "background": {
-        "scripts": ["utils.js", "background.js"]
+        "scripts": ["js/utils.js", "js/background.js"]
     },
     "content_scripts": [
         {
             "matches": ["*://*.google.com/*"],
             "css": ["paid-results.css"],
-            "js": ["utils.js", "paid-results.js"]
+            "js": ["js/utils.js", "js/paid-results.js"]
         }
     ],
     "manifest_version" : 2
