@@ -21,6 +21,13 @@ class DynamicRulesHandler {
 	static delete(ids) {
 		chrome.declarativeNetRequest.updateDynamicRules(ids, []);
 	}
+	static flush() {
+		this.get(rules => {
+			const ids = rules.map(rule => rule.id);
+
+			this.delete(ids);
+		})
+	}
 }
 
 DynamicRulesHandler.get(rules => {
