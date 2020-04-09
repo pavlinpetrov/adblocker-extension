@@ -1,3 +1,5 @@
+// Track blocked ads
+
 const counter = document.querySelector('#counter');
 
 chrome.storage.sync.get(['totalBlockedAdsNum'], result => {
