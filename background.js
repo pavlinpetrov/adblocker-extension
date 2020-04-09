@@ -33,7 +33,7 @@ const updateBlockedAdsCounter = adsNum => {
 };
 
 const handleMessage = message => {
-  switch (message.type) {
+  switch (message.action) {
     case 'updateBlockedAdsCounter':
       updateBlockedAdsCounter(message.amount);
   }

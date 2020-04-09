@@ -4,7 +4,7 @@ console.log(paidResults);
 
 if (paidResults.length) {
   chrome.runtime.sendMessage({
-    type: 'updateBlockedAdsCounter',
+    action: 'updateBlockedAdsCounter',
     amount: paidResults.length,
   });
 }

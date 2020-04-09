@@ -1,33 +1,33 @@
 {
-    "name": "AdBlocker",
-    "version": "1.0",
-    "description": "Hides google paid search results and dir.bg ads.",
-    "manifest_version" : 3,
-    "permissions": [
-        "declarativeNetRequest",
-        "declarativeNetRequestFeedback",
-        "storage",
-        "activeTab"
-    ],
-    "host_permissions": [
-        "*://*.dir.bg/*"
-    ],
-	"browser_action": {
-        "default_popup": "blocked-ads-counter.html"
-    },
-    "declarative_net_request" : {
-        "rule_resources" : [{
-          "path": "rules.json"
-        }]
-    },
-    "background": {
-        "service_worker": "background.js"
-    },
-    "content_scripts": [
-        {
-            "matches": ["*://*.google.com/*"],
-            "css": ["css/paid-results.css"],
-            "js": ["js/paid-results.js"]
-        }
+  "name": "AdBlocker",
+  "version": "1.0",
+  "description": "Hides google paid search results and dir.bg ads.",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": ["*://*.dir.bg/*"],
+  "browser_action": {
+    "default_popup": "blocked-ads-counter.html"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "path": "rules.json"
+      }
     ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/*"],
+      "css": ["css/paid-results.css"],
+      "js": ["js/paid-results.js"]
+    }
+  ]
 }
