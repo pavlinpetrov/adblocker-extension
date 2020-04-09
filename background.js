@@ -36,6 +36,10 @@ const handleMessage = message => {
   switch (message.action) {
     case 'updateBlockedAdsCounter':
       updateBlockedAdsCounter(message.amount);
+      break;
+    case 'testMultipleEvents':
+      updateBlockedAdsCounter(100);
+      break;
   }
 };
 
