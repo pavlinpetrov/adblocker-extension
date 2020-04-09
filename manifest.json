@@ -27,7 +27,7 @@
         {
             "matches": ["*://*.google.com/*"],
             "css": ["css/paid-results.css"],
-            "js": ["js/utils.js", "js/paid-results.js"]
+            "js": ["js/paid-results.js"]
         }
     ]
 }
