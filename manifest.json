@@ -11,7 +11,7 @@
   ],
   "host_permissions": ["*://*.dir.bg/*"],
   "browser_action": {
-    "default_popup": "popup.html"
+    "default_popup": "pages/popup.html"
   },
   "declarative_net_request": {
     "rule_resources": [
