@@ -1,0 +1,34 @@
+{
+  "name": "AdBlocker",
+  "version": "1.0",
+  "description": "An AdBlocker with testing purpose.",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "storage",
+    "activeTab",
+    "alarms"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "browser_action": {
+    "default_popup": "pages/popup.html"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "path": "rules.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/*"],
+      "css": ["css/paid-results.css"],
+      "js": ["js/paid-results.js"]
+    }
+  ]
+}
