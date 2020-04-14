@@ -7,12 +7,11 @@
     "declarativeNetRequest",
     "declarativeNetRequestFeedback",
     "storage",
-    "activeTab",
-    "alarms"
+    "activeTab"
   ],
   "host_permissions": ["<all_urls>"],
   "browser_action": {
-    "default_popup": "pages/popup.html"
+    "default_popup": "popup/index.html"
   },
   "declarative_net_request": {
     "rule_resources": [
@@ -27,8 +26,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.google.com/*"],
-      "css": ["css/paid-results.css"],
-      "js": ["js/paid-results.js"]
+      "css": ["content-scripts/css/paid-results.css"],
+      "js": ["content-scripts/js/paid-results.js"]
     }
   ]
 }

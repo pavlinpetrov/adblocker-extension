@@ -1,3 +1,3 @@
-import { DynamicRulesHandler, updateBlockedAdsCounter, handleMessage } from './js/utils.js';
+import { DynamicRulesHandler, updateBlockedAdsCounter, handleMessage } from './modules/utils.js';
 
 chrome.runtime.onMessage.addListener(handleMessage);
