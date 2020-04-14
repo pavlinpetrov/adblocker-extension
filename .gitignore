@@ -1,4 +1,4 @@
-_metadata/*
+src/_metadata/*
 dist/*
 node_modules/*
 archives/*
