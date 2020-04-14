@@ -1,11 +1,14 @@
 {
   "name": "adblocker-extension",
-  "version": "1.0.0",
+  "version": "2.1.7",
   "description": "",
   "scripts": {
     "build": "webpack --mode=production",
+    "buildMajor": "npm run build && npm --no-git-tag-version version major",
+    "buildMinor": "npm run build && npm --no-git-tag-version version minor",
+    "buildPatch": "npm run build && npm --no-git-tag-version version patch",
     "dev": "webpack --watch --mode=development",
-    "archive": "node scripts/archive"
+    "archive": "webpack --mode=production && node scripts/archive"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +20,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "webpack": "^4.42.1",
+    "webpack-auto-inject-version": "^1.2.2",
     "webpack-cli": "^3.3.11"
   }
 }

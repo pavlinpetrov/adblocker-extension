@@ -1,5 +1,7 @@
+const { BannerPlugin } = require('webpack');
 const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+var fs = require("fs");
 
 module.exports = {
   context: __dirname + '/src',
@@ -31,5 +33,6 @@ module.exports = {
       { from: 'pages', to: 'pages' },
       { from: 'css', to: 'css' },
     ]),
+    new BannerPlugin(fs.readFileSync('./LICENSE', 'utf8')),
   ],
 };
