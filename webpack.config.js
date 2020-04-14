@@ -1,14 +1,14 @@
-const { BannerPlugin } = require('webpack');
-const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
-var fs = require("fs");
+const CopyPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
+const { BannerPlugin } = require('webpack');
 
 module.exports = {
   context: __dirname + '/src',
   entry: {
     background: './background.js',
-    'js/popup': './js/popup.js',
-    'js/paid-results': './js/paid-results.js',
+    'popup/main': './popup/main.js',
+    'content-scripts/js/paid-results': './content-scripts/js/paid-results.js',
   },
   module: {
     rules: [
@@ -26,12 +26,14 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new CopyPlugin([
       { from: 'manifest.json', to: 'manifest.json' },
       { from: 'rules.json', to: 'rules.json' },
-      { from: 'pages', to: 'pages' },
-      { from: 'css', to: 'css' },
+      { from: 'popup', to: 'popup', ignore: ['*.js'] },
+      { from: 'content-scripts/css', to: 'content-scripts/css' },
     ]),
     new BannerPlugin(fs.readFileSync('./LICENSE', 'utf8')),
   ],
