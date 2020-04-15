@@ -1,8 +1,9 @@
 {
-  "name": "AdBlocker",
+  "name": "__MSG_name__",
   "version": "1.0",
   "description": "An AdBlocker with testing purpose.",
   "manifest_version": 3,
+  "default_locale": "en",
   "permissions": [
     "declarativeNetRequest",
     "declarativeNetRequestFeedback",

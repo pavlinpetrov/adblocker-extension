@@ -31,6 +31,7 @@ module.exports = {
     }),
     new CopyPlugin([
       { from: 'manifest.json', to: 'manifest.json' },
+      { from: '_locales', to: '_locales' },
       { from: 'rules.json', to: 'rules.json' },
       { from: 'popup', to: 'popup', ignore: ['*.js'] },
       { from: 'content-scripts/css', to: 'content-scripts/css' },
